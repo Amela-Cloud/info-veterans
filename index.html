@@ -11,6 +11,9 @@
 <header>
     <h1>Информационный сайт для ветеранов</h1>
     <p>Поддержка, информация и помощь</p>
+    <button onclick="toggleVision()" id="visionBtn" class="vision-btn">
+    Версия для слабовидящих
+    </button>
 </header>
 
 <nav>
@@ -33,7 +36,26 @@
     Электронная почта: <strong>info@veteransite.ru</strong></p>
     <p>© 2026 Информационный сайт для ветеранов</p>
 </footer>
+<script>
+const btn = document.getElementById("visionBtn");
+if (localStorage.getItem("vision") === "on") {
+    document.body.classList.add("vision");
+    btn.textContent = "Обычная версия";
+}
 
+function toggleVision() {
+    document.body.classList.toggle("vision");
+
+    if (document.body.classList.contains("vision")) {
+        localStorage.setItem("vision", "on");
+        btn.textContent = "Обычная версия";
+    } else {
+        localStorage.setItem("vision", "off");
+        btn.textContent = "Версия для слабовидящих";
+    }
+}
+</script>
 </body>
 </html>
+
 
