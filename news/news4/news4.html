@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Программа реабилитации - Новости для ветеранов</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header>
+    <h1>Информационный сайт для ветеранов</h1>
+    <p>Поддержка, информация и помощь</p>
+    <button onclick="toggleVision()" id="visionBtn" class="vision-btn">
+        Версия для слабовидящих
+    </button>
+</header>
+
+<nav>
+    <a href="../../index.html">Новости</a>
+    <a href="../../benefits.html">Льготы</a>
+    <a href="../../help.html">Помощь</a>
+    <a href="../../about.html">О сайте</a>
+</nav>
+
+<div class="container">
+<!-- ===== ГАЛЕРЕЯ ===== -->
+        <div class="news-gallery" data-gallery>
+
+            <div class="gallery-main">
+                <button class="gal-prev">&#10094;</button>
+
+                <div class="gallery-stage"></div>
+
+                <button class="gal-next">&#10095;</button>
+            </div>
+
+            <div class="gallery-thumbs">
+                <video src="news4_video.mp4" data-type="video"></video>
+                
+            </div>
+        </div>
+        <!-- ===== /ГАЛЕРЕЯ ===== -->
+    <script src="../../script.js"></script>
+    <div class="news-full">
+        
+        <div class="news-date">29 января 2026</div>
+        
+        <div class="news-text">
+            
+			<p>Ещё немного видео со слёта "Робинзон" для детей из социальных приютов Республики Татарстан.</p>
+        </div>
+
+        <a href="../../index.html" class="back-link">← Вернуться к новостям</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Информационный сайт для ветеранов</p>
+</footer>
+</body>
+</html>
