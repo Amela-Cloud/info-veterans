@@ -17,10 +17,12 @@
     </button>
 </header>
 <nav>
-<a href="index.html">О сайте</a>
-<a href="benefits.html">Льготы</a>
-<a href="help.html">Помощь</a>
+    <a href="index.html">Новости</a>
+    <a href="benefits.html">Льготы</a>
+    <a href="help.html">Помощь</a>
+    <a href="about.html">О сайте</a>
 </nav>
+
 
 <div class="container">
 <h2>Где получить помощь в Набережных Челнах</h2> 
@@ -61,23 +63,29 @@
 <p>© 2026 Информационный сайт для ветеранов</p>
 </footer>
 <script>
-const btn = document.getElementById("visionBtn");
-if (localStorage.getItem("vision") === "on") {
-    document.body.classList.add("vision");
-    btn.textContent = "Обычная версия";
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("visionBtn");
 
-function toggleVision() {
-    document.body.classList.toggle("vision");
-
-    if (document.body.classList.contains("vision")) {
-        localStorage.setItem("vision", "on");
+    if (localStorage.getItem("vision") === "on") {
+        document.body.classList.add("vision");
         btn.textContent = "Обычная версия";
     } else {
-        localStorage.setItem("vision", "off");
         btn.textContent = "Версия для слабовидящих";
     }
-}
+
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("vision");
+
+        if (document.body.classList.contains("vision")) {
+            localStorage.setItem("vision", "on");
+            btn.textContent = "Обычная версия";
+        } else {
+            localStorage.setItem("vision", "off");
+            btn.textContent = "Версия для слабовидящих";
+        }
+    });
+});
 </script>
+
 </body>
 </html>
