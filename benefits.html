@@ -18,13 +18,15 @@
 </header>
 
 <nav>
-<a href="index.html">О сайте</a>
-<a href="benefits.html">Льготы</a>
-<a href="help.html">Помощь</a>
+    <a href="index.html">Новости</a>
+    <a href="benefits.html">Льготы</a>
+    <a href="help.html">Помощь</a>
+    <a href="about.html">О сайте</a>
 </nav>
 
+
 <div class="container">
-<h1>Льготы и меры поддержки</h1>
+<h2>Льготы и меры поддержки</h2>
 <p>Для ветеранов боевых действий и участников СВО в Набережных Челнах предусмотрены следующие льготы:</p>
 <ul> 
 <li><strong>Ежемесячные денежные выплаты:</strong> ЕДВ — <strong>4 582 ₽</strong> (2025 г.), компенсация набора социальных услуг — до <strong>3 500 ₽</strong> </li> 
@@ -42,7 +44,7 @@
 <li>Обратиться через <strong>МФЦ (многофункциональный центр)</strong></li> <li>Предоставить документы: удостоверение ветерана или справку о статусе участника СВО, паспорт, документы о составе семьи, при необходимости — документы о ранениях или трудовом стаже</li> 
 </ul> 
 <div class="important"> 
-<strong>Важно:</strong> размеры выплат и условия льгот могут изменяться. Уточняйте актуальную информацию в отделе социальной защиты, МФЦ или на <a href="https://www.gosuslugi.ru" target="_blank">портале Госуслуги</a>, <a href="http://pravo.gov.ru/proxy/ips/?docbody=&nd=102033827" target="_blank">федеральный закон о ветеранах</a>. 
+<strong>Важно:</strong> размеры выплат и условия льгот могут изменяться. Уточняйте актуальную информацию в отделе социальной защиты, МФЦ, на <a href="https://www.gosuslugi.ru" target="_blank">портале Госуслуги</a>, <a href="http://pravo.gov.ru/proxy/ips/?docbody=&nd=102033827" target="_blank">федеральный закон о ветеранах</a>. 
 </div>
 </div>
 
@@ -50,24 +52,29 @@
 <p>© 2026 Информационный сайт для ветеранов</p>
 </footer>
 <script>
-const btn = document.getElementById("visionBtn");
-if (localStorage.getItem("vision") === "on") {
-    document.body.classList.add("vision");
-    btn.textContent = "Обычная версия";
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("visionBtn");
 
-function toggleVision() {
-    document.body.classList.toggle("vision");
-
-    if (document.body.classList.contains("vision")) {
-        localStorage.setItem("vision", "on");
+    if (localStorage.getItem("vision") === "on") {
+        document.body.classList.add("vision");
         btn.textContent = "Обычная версия";
     } else {
-        localStorage.setItem("vision", "off");
         btn.textContent = "Версия для слабовидящих";
     }
-}
+
+    btn.addEventListener("click", () => {
+        document.body.classList.toggle("vision");
+
+        if (document.body.classList.contains("vision")) {
+            localStorage.setItem("vision", "on");
+            btn.textContent = "Обычная версия";
+        } else {
+            localStorage.setItem("vision", "off");
+            btn.textContent = "Версия для слабовидящих";
+        }
+    });
+});
 </script>
+
 </body>
 </html>
-
