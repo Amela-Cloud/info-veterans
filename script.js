@@ -1,6 +1,3 @@
-/* ==============================
-   ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ
-============================== */
 document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("visionBtn");
 
@@ -20,10 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initGallery();
 });
-
-/* ==============================
-   ГАЛЕРЕЯ ФОТО + ВИДЕО (FIX)
-============================== */
 function initGallery() {
     const gallery = document.querySelector("[data-gallery]");
     if (!gallery) return;
@@ -49,16 +42,12 @@ function initGallery() {
             element.src = item.src;
             element.controls = true;
             element.playsInline = true;
-
-            // ❌ ЗАПРЕТ клика по видео
             element.addEventListener("click", e => {
                 e.stopPropagation();
             });
         } else {
             element = document.createElement("img");
             element.src = item.src;
-
-            // ✅ fullscreen ТОЛЬКО ДЛЯ ФОТО
             element.addEventListener("click", () => openFullscreenImage(item.src));
         }
 
@@ -84,12 +73,7 @@ function initGallery() {
 
     render(currentIndex);
 }
-
-/* ==============================
-   FULLSCREEN ТОЛЬКО ДЛЯ ФОТО
-============================== */
 function openFullscreenImage(src) {
-    // ❌ если уже открыт — не открываем второй
     if (document.querySelector(".fullscreen")) return;
 
     const overlay = document.createElement("div");
@@ -103,3 +87,4 @@ function openFullscreenImage(src) {
 
     overlay.addEventListener("click", () => overlay.remove());
 }
+
